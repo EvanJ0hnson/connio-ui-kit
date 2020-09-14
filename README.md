@@ -1,2 +1,1 @@
-# cio-ui-kit
-Connio UI kit
+# Connio UI kit
