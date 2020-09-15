@@ -1,0 +1,31 @@
+{
+  "name": "@evanj0hnson/ui-kit",
+  "version": "0.1.0-alpha.0",
+  "description": "Connio UI Kit",
+  "main": "./src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvanJ0hnson/cio-ui-kit.git"
+  },
+  "author": "Connio Inc.",
+  "contributors": [
+    "Connio Inc.",
+    "Ivan Gerasimov <ivangerasimow@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EvanJ0hnson/cio-ui-kit/issues"
+  },
+  "homepage": "https://github.com/EvanJ0hnson/cio-ui-kit#readme",
+  "devDependencies": {
+    "husky": "4.3.0"
+  },
+  "dependencies": {
+    "@types/classnames": "2.2.10",
+    "@types/react": "16.9.49",
+    "@types/react-dom": "16.9.8",
+    "classnames": "2.2.6",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  }
+}

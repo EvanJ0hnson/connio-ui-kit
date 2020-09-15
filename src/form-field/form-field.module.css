@@ -1,0 +1,35 @@
+.inputWrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  transition: opacity var(--transition-defaults);
+}
+
+.inputLabel {
+  width: 100%;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  margin-bottom: 8px;
+}
+
+.inputFieldWrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 100%;
+}
+
+.optional {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.isDisabled {
+  pointer-events: none;
+
+  & select {
+    opacity: 0.625;
+  }
+}
