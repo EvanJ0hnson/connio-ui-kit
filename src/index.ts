@@ -3,6 +3,7 @@ export { DrawerHeader } from './drawer-header';
 export { Form, useFormState } from './form';
 export { FormField } from './form-field';
 export { FormFooter } from './form-footer';
+export { Link } from './link';
 export { Loader } from './loader';
 export { RadioInput } from './radio-input';
 export type { ReactInteractionEvent } from './react-interaction-event';
