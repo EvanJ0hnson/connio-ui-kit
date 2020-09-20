@@ -1,23 +1,44 @@
 import classnames from 'classnames';
 import * as React from 'react';
+import { WithReactElement } from '../types';
+import styles from './link.module.css';
 
 const TARGET = '_blank';
 const REL = 'nofollow noopener noreferrer';
 
-interface ILink {
-  href: string;
-  rel?: string;
-  target?: string;
-  className?: string;
+export interface IStyledLink {
   style?: React.CSSProperties;
+  className?: string;
+  isSmall?: boolean;
+}
+
+export interface ILink extends IStyledLink {
+  href?: string;
+  target?: string;
+  rel?: string;
   title: string;
-  label?: string;
-  isExternal: boolean;
+  isExternal?: boolean;
+}
+
+export function StyledLink({
+  element,
+  ...props
+}: WithReactElement<IStyledLink>) {
+  let additionalProps = React.useMemo(() => {
+    return {
+      style: props.style,
+      className: classnames(styles.link, props.className, {
+        [styles.isSmall]: props.isSmall,
+      }),
+    };
+  }, [props.style, props.className, props.isSmall]);
+
+  return React.cloneElement(element, additionalProps);
 }
 
 export function Link(props: React.PropsWithChildren<ILink>) {
-  let rel = props.isExternal ? REL : undefined;
-  let target = props.isExternal ? TARGET : undefined;
+  let rel;
+  let target;
 
   if (props.isExternal) {
     rel = props.rel || REL;
@@ -27,10 +48,12 @@ export function Link(props: React.PropsWithChildren<ILink>) {
   return (
     <a
       style={props.style}
-      className={classnames(props.className)}
+      className={classnames(styles.link, props.className, {
+        [styles.isSmall]: props.isSmall,
+      })}
       href={props.href}
-      rel={rel}
       target={target}
+      rel={rel}
       title={props.title}
     >
       {props.children}

@@ -1,0 +1,47 @@
+.link {
+  position: relative;
+
+  padding: var(--link-padding);
+
+  font-size: var(--font-size-default);
+  text-decoration: none;
+
+  border-radius: var(--border-radius-s);
+
+  color: inherit;
+
+  transition: box-shadow var(--transition-defaults);
+
+  cursor: pointer;
+  outline: none;
+
+  &::after {
+    --offset: calc(var(--link-padding) / 2);
+
+    position: absolute;
+
+    bottom: 0;
+    left: var(--offset);
+    right: var(--offset);
+
+    height: 2px;
+
+    color: transparent;
+
+    content: '';
+
+    transition: background-color var(--transition-defaults);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &::after {
+      background-color: rgba(255, 255, 255, 0.75);
+    }
+  }
+}
+
+.isSmall {
+  font-size: var(--font-size-s);
+}
