@@ -10,6 +10,7 @@ export interface IStyledLink {
   style?: React.CSSProperties;
   className?: string;
   isSmall?: boolean;
+  isInline?: boolean;
 }
 
 export interface ILink extends IStyledLink {
@@ -29,6 +30,7 @@ export function StyledLink({
       style: props.style,
       className: classnames(styles.link, props.className, {
         [styles.isSmall]: props.isSmall,
+        [styles.isInline]: props.isInline,
       }),
     };
   }, [props.style, props.className, props.isSmall]);
@@ -50,6 +52,7 @@ export function Link(props: React.PropsWithChildren<ILink>) {
       style={props.style}
       className={classnames(styles.link, props.className, {
         [styles.isSmall]: props.isSmall,
+        [styles.isInline]: props.isInline,
       })}
       href={props.href}
       target={target}
