@@ -9,7 +9,7 @@ interface IRadioInput {
   label: string;
   checked?: boolean;
   defaultChecked?: boolean;
-  onChange: any;
+  onChange?: any;
   disabled?: boolean;
   required?: boolean;
 }
