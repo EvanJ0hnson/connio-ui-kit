@@ -12,6 +12,7 @@ interface IRadioInput {
   onChange?: any;
   disabled?: boolean;
   required?: boolean;
+  isSmall?: boolean;
 }
 
 export function RadioInput(props: IRadioInput) {
@@ -22,6 +23,7 @@ export function RadioInput(props: IRadioInput) {
       htmlFor={id}
       className={classnames(styles.container, {
         [styles.isDisabled]: props.disabled,
+        [styles.isSmall]: props.isSmall,
       })}
     >
       <div className={styles.label}>{props.label}</div>
