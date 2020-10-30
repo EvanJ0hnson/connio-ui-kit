@@ -26,7 +26,7 @@ export interface IButton {
   ariaRole?: 'link';
 }
 
-function getDataset(props: IButton): Record<string, string> {
+export function getDataset(props: IButton): Record<string, string> {
   let dataset: Record<string, string> = {};
 
   for (let [key, value] of Object.entries(props)) {
