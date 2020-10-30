@@ -1,23 +1,37 @@
+import classnames from 'classnames';
 import * as React from 'react';
 import styles from './form-field.module.css';
 import { Optional } from './optional';
-import classnames from 'classnames';
 
 interface IFormField {
+  style?: React.CSSProperties;
   name?: string;
   label?: string;
   isOptional?: boolean;
   disabled?: boolean;
   children: React.ReactElement;
   for?: string;
+  className?: string;
+  help?: React.ReactElement;
+  error?: string;
 }
 
 export function FormField(props: IFormField) {
   return (
-    <label htmlFor={props.name || props.for} className={styles.inputWrapper}>
-      {props.label && (
+    <label
+      htmlFor={props.name || props.for}
+      style={props.style}
+      className={classnames(styles.inputWrapper, props.className, {
+        [styles.hasError]: !!props.error,
+      })}
+    >
+      {(props.label || props.help) && (
         <div className={styles.inputLabel}>
-          {props.label} {props.isOptional ? <Optional /> : undefined}
+          <div>
+            {props.label} {props.isOptional ? <Optional /> : undefined}
+          </div>
+
+          <div className={styles.helpContainer}>{props.help}</div>
         </div>
       )}
 
@@ -36,9 +50,12 @@ export function FormField(props: IFormField) {
                */
               disabled: props.disabled,
               isDisabled: props.disabled,
+              error: !!props.error,
             })
           : props.children}
       </div>
+
+      {props.error && <div className={styles.errorMessage}>{props.error}</div>}
     </label>
   );
 }
