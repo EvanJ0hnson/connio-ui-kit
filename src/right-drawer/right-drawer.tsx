@@ -9,6 +9,8 @@ type ReactOnClickHandler = (
 interface IRightDrawer {
   onBackdropClick?: ReactOnClickHandler;
   isBig?: boolean;
+  isHuge?: boolean;
+  isFull?: boolean;
 }
 
 export function RightDrawer(props: React.PropsWithChildren<IRightDrawer>) {
@@ -25,6 +27,8 @@ export function RightDrawer(props: React.PropsWithChildren<IRightDrawer>) {
       <div
         className={classnames(styles.wrapper, {
           [styles.isBig]: props.isBig,
+          [styles.isHuge]: props.isHuge,
+          [styles.isFull]: props.isFull,
         })}
       >
         {props.children}

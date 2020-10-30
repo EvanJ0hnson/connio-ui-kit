@@ -36,4 +36,13 @@
   textarea& {
     resize: vertical;
   }
+
+  &.isSmall {
+    padding: 0.5rem 0.625rem;
+  }
+
+  &.hasError {
+    border-color: var(--color-form-error);
+    box-shadow: 0 0 0 1px var(--color-form-error);
+  }
 }

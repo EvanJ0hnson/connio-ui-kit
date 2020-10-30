@@ -1,14 +1,17 @@
 import * as React from 'react';
-import styles from './text-input.module.css';
+import { forwardRef } from 'react';
+import type { TRef } from '../types';
 import { IInput } from './text-input';
+import styles from './text-input.module.css';
 
 interface ITextarea extends IInput<HTMLTextAreaElement> {
   rows: number;
 }
 
-export function TextArea(props: ITextarea) {
+export function _TextArea(props: ITextarea, ref: TRef<HTMLTextAreaElement>) {
   return (
     <textarea
+      ref={ref}
       id={props.id}
       name={props.name}
       rows={props.rows}
@@ -19,3 +22,7 @@ export function TextArea(props: ITextarea) {
     ></textarea>
   );
 }
+
+_TextArea.displayName = 'TextArea';
+
+export const TextArea = forwardRef<HTMLTextAreaElement, ITextarea>(_TextArea);

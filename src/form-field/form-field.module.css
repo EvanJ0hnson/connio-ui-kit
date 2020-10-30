@@ -1,17 +1,36 @@
 .inputWrapper {
+  position: relative;
+
   display: flex;
   flex-wrap: wrap;
 
+  margin-bottom: 1.5rem;
+
   transition: opacity var(--transition-defaults);
+
+  &.hasError {
+    margin-bottom: 0.625rem;
+  }
+
+  & input {
+    margin-bottom: 0.25rem;
+  }
 }
 
 .inputLabel {
+  display: flex;
+  align-items: center;
+
   width: 100%;
 
-  font-size: 13px;
+  font-size: var(--font-size-default);
   font-weight: 600;
 
   margin-bottom: 8px;
+}
+
+.helpContainer {
+  margin-left: 0.25rem;
 }
 
 .inputFieldWrapper {
@@ -32,4 +51,13 @@
   & select {
     opacity: 0.625;
   }
+}
+
+.errorMessage {
+  margin-bottom: 0.0625rem;
+  margin-left: 0.25rem;
+
+  color: var(--color-form-error);
+
+  font-size: var(--font-size-s);
 }

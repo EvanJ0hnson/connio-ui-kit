@@ -24,6 +24,26 @@
   width: 35vw;
 }
 
+@media (max-width: 1280px) {
+  .isBig {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .isBig {
+    width: 70vw;
+  }
+}
+
+.isHuge {
+  width: 70vw;
+}
+
+.isFull {
+  width: 90vw;
+}
+
 .backdrop {
   position: fixed;
 
