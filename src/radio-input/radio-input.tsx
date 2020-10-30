@@ -1,6 +1,8 @@
 import classnames from 'classnames';
 import * as React from 'react';
+import { forwardRef } from 'react';
 import { InputType } from '../input-type';
+import { TRef } from '../types';
 import styles from './radio-input.module.css';
 
 interface IRadioInput {
@@ -15,7 +17,7 @@ interface IRadioInput {
   isSmall?: boolean;
 }
 
-export function RadioInput(props: IRadioInput) {
+export function _RadioInput(props: IRadioInput, ref: TRef<HTMLInputElement>) {
   let id = `${props.value}`;
 
   return (
@@ -31,6 +33,7 @@ export function RadioInput(props: IRadioInput) {
       <input
         id={id}
         name={props.name}
+        ref={ref}
         type={InputType.Radio}
         className={styles.input}
         value={props.value}
@@ -43,3 +46,9 @@ export function RadioInput(props: IRadioInput) {
     </label>
   );
 }
+
+_RadioInput.displayName = 'RadioInput';
+
+export const RadioInput = forwardRef<HTMLInputElement, IRadioInput>(
+  _RadioInput,
+);
