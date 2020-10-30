@@ -23,6 +23,7 @@ export interface IButton {
   isBusy?: boolean;
   isSmall?: boolean;
   autoFocus?: boolean;
+  ariaRole?: 'link';
 }
 
 function getDataset(props: IButton): Record<string, string> {
@@ -62,6 +63,7 @@ export function Button({
       autoFocus={props.autoFocus}
       onClick={props.onClick}
       onMouseDown={props.onMouseDown}
+      role={props.ariaRole}
       {...dataset}
     >
       {children}
