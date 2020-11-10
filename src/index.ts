@@ -1,4 +1,4 @@
-export { Button } from './button';
+export { Button, IButton } from './button';
 export { DrawerHeader } from './drawer-header';
 export { Form, useFormState } from './form';
 export { FormField } from './form-field';
