@@ -1,6 +1,8 @@
 import classnames from 'classnames';
 import * as React from 'react';
+import { forwardRef } from 'react';
 import type { ReactInteractionEvent } from '../react-interaction-event';
+import { TRef } from '../types';
 import styles from './button.module.css';
 
 export enum ButtonType {
@@ -40,14 +42,17 @@ export function getDataset(props: IButton): Record<string, string> {
   return dataset;
 }
 
-export function Button({
-  children,
-  ...props
-}: React.PropsWithChildren<IButton>) {
+_Button.displayName = 'Button';
+
+export function _Button(
+  { children, ...props }: React.PropsWithChildren<IButton>,
+  ref?: TRef<HTMLButtonElement>,
+) {
   let dataset = getDataset(props);
 
   return (
     <button
+      ref={ref}
       type={props.type || ButtonType.Button}
       id={props.id}
       name={props.name}
@@ -70,3 +75,8 @@ export function Button({
     </button>
   );
 }
+
+export const Button = forwardRef<
+  HTMLButtonElement,
+  React.PropsWithChildren<IButton>
+>(_Button);

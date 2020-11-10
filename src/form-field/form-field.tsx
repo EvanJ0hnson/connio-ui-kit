@@ -49,8 +49,8 @@ export function FormField(props: IFormField) {
                * - Unify "disabled" and "isDisabled"
                */
               disabled: props.disabled,
-              isDisabled: props.disabled,
-              error: !!props.error,
+              // isDisabled: props.disabled,
+              error: !!props.error || undefined,
             })
           : props.children}
       </div>
