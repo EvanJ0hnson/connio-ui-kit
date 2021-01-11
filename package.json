@@ -5,7 +5,7 @@
   "main": "./src/index.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EvanJ0hnson/cio-ui-kit.git"
+    "url": "git+https://github.com/EvanJ0hnson/connio-ui-kit.git"
   },
   "author": "Connio Inc.",
   "contributors": [
@@ -14,9 +14,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/EvanJ0hnson/cio-ui-kit/issues"
+    "url": "https://github.com/EvanJ0hnson/connio-ui-kit/issues"
   },
-  "homepage": "https://github.com/EvanJ0hnson/cio-ui-kit#readme",
+  "homepage": "https://github.com/EvanJ0hnson/connio-ui-kit#readme",
   "devDependencies": {
     "husky": "4.3.0"
   },
